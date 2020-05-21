@@ -1,6 +1,6 @@
 import axios from "axios";
 import jwt_decode from "jwt-decode";
-import { GET_ERRORS, SET_CURRENT_USER } from "./types";
+import { GET_ERRORS, SET_CURRENT_USER } from "./authTypes";
 
 //----Login User----
 export const loginUser = (userData, history) => dispatch => {
@@ -11,7 +11,7 @@ export const loginUser = (userData, history) => dispatch => {
       res.data.jwt
         ? (console.log("res.data.jwt", res.data.jwt),
           localStorage.setItem("jwtToken", res.data.jwt),
-          history.push("/home"),
+          history.push("/booking"),
           dispatch(setCurrentUser(jwt_decode(res.data.jwt))))
         : dispatch({
             type: GET_ERRORS,

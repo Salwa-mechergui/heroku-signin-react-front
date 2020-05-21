@@ -1,13 +1,13 @@
 // import isEmpty from './Validation/is-empty';
 
-import { SET_CURRENT_USER } from '../actions/authActions/types';
+import { SET_CURRENT_USER } from '../actions/authActions/authTypes';
 
 const initialState = {
   isAuthenticated: false,
   user: {}
 };
 
-export default function(state = initialState, action) {
+ const authReducer=(state = initialState, action)=> {
   switch (action.type) {
     case SET_CURRENT_USER:
       return {
@@ -20,4 +20,4 @@ export default function(state = initialState, action) {
       return state;
   }
 }
-
+export default authReducer;

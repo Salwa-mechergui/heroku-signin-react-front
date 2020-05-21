@@ -53,16 +53,14 @@ function Login(props) {
   const handleSubmit = async e => {
     e.preventDefault();
     if (
-      !login.email ||
       login.email === "" ||
-      !login.password ||
       login.password === ""
     )
       return setError("Champs vide");
     console.log(login);
     try {
       props.loginUser(login, props.history);
-    } catch (err) {
+    } catch(err) {
       setError("Login failed");
     }
   };
