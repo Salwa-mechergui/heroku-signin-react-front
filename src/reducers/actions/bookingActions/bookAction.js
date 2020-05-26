@@ -18,7 +18,7 @@ export const searchUserbyid = (saas_company_id, id) => async dispatch => {
     const res = await axios.get(`/customer/${saas_company_id}/${id}`);
     dispatch({
       type: GET_FRONTUSER,
-      payload: res.data
+      payload: res.data.Value
     });
   } catch (error) {
     console.log(error);
@@ -30,19 +30,19 @@ export const searchPassengers = (customer_id) => async dispatch => {
     const res = await axios.get(`/passenger/${customer_id}`);
     dispatch({
       type: GET_PASSENGERS,
-      payload: res.data
+      payload: res.data.Value
     });
   } catch (error) {
     console.log(error);
   }
 };
 
-export const searchPassengerbyid = (customer_id, id) => async dispatch => {
+export const searchPassengerbyid = (customer_id, passenger_id) => async dispatch => {
   try {
-    const res = await axios.get(`/passenger/${customer_id}/${id}`);
+    const res = await axios.get(`/passenger/${customer_id}/${passenger_id}`);
     dispatch({
       type: GET_PASSENGER,
-      payload: res.data
+      payload: res.data.Value
     });
   } catch (error) {
     console.log(error);
@@ -53,7 +53,7 @@ export const searchCompanies = (saas_company_id) => async dispatch => {
     const res = await axios.get(`/companies/${saas_company_id}`);
     dispatch({
       type: GET_COMPANIES,
-      payload: res.data
+      payload: res.data.Value
     });
   } catch (error) {
     console.log(error);
@@ -65,7 +65,7 @@ export const searchCompanybyid = (saas_company_id, id) => async dispatch => {
     const res = await axios.get(`/companies/${saas_company_id}/${id}`);
     dispatch({
       type: GET_COMPANY,
-      payload: res.data
+      payload: res.data.Value
     });
   } catch (error) {
     console.log(error);
@@ -76,7 +76,7 @@ export const searchRides = (saas_company_id, customer_id) => async dispatch => {
     const res = await axios.get(`/rides/${saas_company_id}/${customer_id}`);
     dispatch({
       type: GET_RIDES,
-      payload: res.data
+      payload: res.data.Value
     });
   } catch (error) {
     console.log(error);
@@ -88,7 +88,7 @@ export const searchRidebyid = (saas_company_id, customer_id, id) => async dispat
     const res = await axios.get(`/rides/${saas_company_id}/${customer_id}/${id}`);
     dispatch({
       type: GET_RIDE,
-      payload: res.data
+      payload: res.data.Value
     });
   } catch (error) {
     console.log(error);
